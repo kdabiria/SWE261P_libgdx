@@ -7,6 +7,18 @@ import org.junit.Test;
 public class PartitionTest {
 
     @Test
+    public void PolygonTestWithZeroInput(){
+        float[] ver = {};
+        try{
+            Polygon p = new Polygon(ver);
+            fail("Should not be able to create the Polygon class");
+        }
+        catch (IllegalArgumentException e){
+            assertEquals("Expecting an exception","polygons must contain at least 3 points.", e.getMessage());
+        }
+    }
+
+    @Test
     public void PolygonTestWithFiveInput(){
         float[] ver = {1.0f, 2.0f, 3.0f, 4.0f, 5.0f};
         try{
