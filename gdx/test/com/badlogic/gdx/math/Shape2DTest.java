@@ -1,10 +1,9 @@
 
 package com.badlogic.gdx.math;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 public class Shape2DTest {
 
@@ -35,4 +34,125 @@ public class Shape2DTest {
 		assertFalse(r1.overlaps(r2));
 		assertTrue(r1.contains(0, 0));
 	}
+
+	@Test
+	public void testPolygonRotation(){
+		float[] f = { 50.0f, -87.0f,
+				-59.0f, -87.0f,
+				-100.0f, 0.0f,
+				-50.0f,  87.0f,
+				50.0f,  87.0f,
+				100.0f, 0.0f};
+
+		Polygon p = new Polygon(f);
+		p.setRotation(15.0f);
+
+		assertEquals(15f, p.getRotation(),0);
+	}
+
+	@Test
+	public void testPolygonScale(){
+		float[] f = { 50.0f, -87.0f,
+				-59.0f, -87.0f,
+				-100.0f, 0.0f,
+				-50.0f,  87.0f,
+				50.0f,  87.0f,
+				100.0f, 0.0f};
+
+		Polygon p = new Polygon(f);
+		p.setScale(10f,12f);
+
+		assertEquals(10f, p.getScaleX(),0);
+		assertEquals(12f, p.getScaleY(),0);
+	}
+
+	@Test
+	public void testPolygonOrigin(){
+		float[] f = { 50.0f, -87.0f,
+				-59.0f, -87.0f,
+				-100.0f, 0.0f,
+				-50.0f,  87.0f,
+				50.0f,  87.0f,
+				100.0f, 0.0f};
+
+		Polygon p = new Polygon(f);
+		p.setOrigin(10f,12f);
+
+		assertEquals(10f, p.getOriginX(),0);
+		assertEquals(12f, p.getOriginY(),0);
+	}
+
+	@Test
+	public void testPolygonPosition(){
+		float[] f = { 50.0f, -87.0f,
+				-59.0f, -87.0f,
+				-100.0f, 0.0f,
+				-50.0f,  87.0f,
+				50.0f,  87.0f,
+				100.0f, 0.0f};
+
+		Polygon p = new Polygon(f);
+		p.setPosition(100f,150f);
+
+		assertEquals(100f, p.getX(),0);
+		assertEquals(150f, p.getY(),0);
+	}
+
+	@Test
+	public void testPolygonArea(){
+		float[] f = { 50.0f, -87.0f,
+				-59.0f, -87.0f,
+				-100.0f, 0.0f,
+				-50.0f,  87.0f,
+				50.0f,  87.0f,
+				100.0f, 0.0f};
+
+		Polygon p = new Polygon(f);
+		float area = p.area();
+		assertEquals(-26491.5, area,0);
+	}
+
+	@Test
+	public void testPolygonContains(){
+		float[] f = { 50.0f, -87.0f,
+				-59.0f, -87.0f,
+				-100.0f, 0.0f,
+				-50.0f,  87.0f,
+				50.0f,  87.0f,
+				100.0f, 0.0f};
+
+		Polygon p = new Polygon(f);
+		boolean contain = p.contains(-2f,-1f);
+		assertTrue(contain);
+	}
+
+
+	@Test
+	public void testPolygonDoesNotContain(){
+		float[] f = { 50.0f, -87.0f,
+				-59.0f, -87.0f,
+				-100.0f, 0.0f,
+				-50.0f,  87.0f,
+				50.0f,  87.0f,
+				100.0f, 0.0f};
+
+		Polygon p = new Polygon(f);
+		boolean contain = p.contains(-150,-1f);
+		assertFalse(contain);
+	}
+
+	@Test
+	public void testPolygonVertices(){
+		float[] f = { 50.0f, -87.0f,
+				-59.0f, -87.0f,
+				-100.0f, 0.0f,
+				-50.0f,  87.0f,
+				50.0f,  87.0f,
+				100.0f, 0.0f};
+
+		Polygon p = new Polygon();
+		p.setVertices(f);
+		assertArrayEquals(f, p.getVertices(),0);
+	}
+
 }
