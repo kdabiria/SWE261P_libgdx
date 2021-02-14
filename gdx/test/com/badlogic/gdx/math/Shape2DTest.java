@@ -26,6 +26,7 @@ public class Shape2DTest {
 		assertTrue(c4.contains(c1));
 	}
 
+
 	@Test
 	public void testRectangle () {
 		Rectangle r1 = new Rectangle(0, 0, 1, 1);
@@ -35,6 +36,17 @@ public class Shape2DTest {
 		assertTrue(r1.contains(0, 0));
 	}
 
+	/* --------- MSWE-262P: Part 3 ---------
+	* Adding following tests for white-box testing:
+	* 		testPolygonRotation
+	* 		testPolygonScale
+	* 		testPolygonOrigin
+	* 		testPolygonPosition
+	* 		testPolygonArea
+	* 		testPolygonContains
+	* 		testPolygonDoesNotContain
+	* 		testPolygonVertices
+	* */
 	@Test
 	public void testPolygonRotation(){
 		float[] f = { 50.0f, -87.0f,
