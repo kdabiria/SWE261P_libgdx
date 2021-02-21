@@ -1,4 +1,9 @@
 language: java
-jdk:
-	- openjdk11
-script: ./gradlew build --scan -s
+install: skip
+
+os: linux
+dist: trusty
+jdk: oraclejdk8
+
+script:
+  - ./gradlew build --scan -s
