@@ -1,7 +1,1 @@
 language: java
-install: skip
-
-dist: trusty
-
-script:
-  - ./gradlew build --scan -s
