@@ -1,0 +1,10 @@
+{
+  "language": "java",
+  "os": [
+    "linux"
+  ],
+  "dist": "xenial",
+  "script": [
+    "./gradlew clean ashley:test"
+  ]
+}
