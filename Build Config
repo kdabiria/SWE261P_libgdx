@@ -5,6 +5,6 @@
   ],
   "dist": "xenial",
   "script": [
-    "./gradlew clean ashley:test"
+    "./gradlew clean test"
   ]
 }
