@@ -14,20 +14,6 @@ import static org.junit.Assert.*;
 
 
 public class MockitoTest {
-//
-//    @Mock
-//    Texture texture;
-//
-//    @Test
-//    public void testTheReturnValue() {
-//        when(texture.getDepth()).thenReturn(null);
-//        TextureRegion textureRegion = new TextureRegion(texture);
-//        int check = textureRegion.getTexture().getDepth();
-////        assertEquals("Value should be 0", 0, check);
-//        assert(true);
-//    }
-
-
     private Polygon polygon;
 
     @Spy
@@ -61,13 +47,3 @@ public class MockitoTest {
         assertEquals(2.0f, value, 0.0002);
     }
 }
-
-//class Service {
-//    private Polygon polygon;
-//
-//    public Service( Polygon p) {
-//        this.polygon = p;
-//    }
-//
-//    public float q
-//}
