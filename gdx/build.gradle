@@ -30,6 +30,8 @@ compileJava {
 
 dependencies {
     testCompile libraries.junit
+    testImplementation 'org.mockito:mockito-inline:3.7.7'
+    testImplementation 'org.mockito:mockito-junit-jupiter:3.7.7'
 }
 
 test {
